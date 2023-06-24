@@ -5,11 +5,19 @@ import DisplayPlates from '../components/DisplayPlates'
 const Home = () => {
     const [barWeight, SetBarWeight] = useState(45)
     const [totalPlates, setTotalPlates] = useState({})
+    const [errorMessage, setErrorMessage] = useState(false)
 
     const calculateWeight = (weight, barWeight) => {
 
+        setErrorMessage(false)
+
         if (weight > 1000) {
-            setTotalPlates('Too Heavy')
+            setErrorMessage('Too heavy')
+            return
+        }
+
+        if (weight % 5 !== 0 || weight <= barWeight) {
+            setErrorMessage('Invalid weight')
             return
         }
 
@@ -37,16 +45,19 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div id="home">
             <div>
                 <h2>BAR WEIGHT</h2>
-                {barWeight}
+                <div>
+                    <input type="number" value={barWeight} onChange={(e) => handleBarWeight(e.target.value)}></input>
+                </div>
                 <div>
                     <button onClick={() => handleBarWeight(0)}>0</button>
                     <button onClick={() => handleBarWeight(20)}>20</button>
                     <button onClick={() => handleBarWeight(35)}>35</button>
                     <button onClick={() => handleBarWeight(45)}>45</button>
                 </div>
+
             </div>
             <div>
                 <h2>WEIGHT</h2>
@@ -54,7 +65,7 @@ const Home = () => {
             </div>
             <div>
                 <h2>PLATES (PER SIDE)</h2>
-                <DisplayPlates totalPlates={totalPlates} />
+                <DisplayPlates totalPlates={totalPlates} errorMessage={errorMessage} />
             </div>
         </div>
     )
