@@ -1,14 +1,17 @@
 const DisplayPlates = ({ totalPlates }) => {
+
+    const sortedTotalPlates = Object.keys(totalPlates).sort((a, b) => a - b).reverse()
+
     return (
         <div>
-            {Object.entries(totalPlates).map(([key, value]) =>
+            {sortedTotalPlates.map((item, index) =>
                 <div id="plate-row">
                     <div id="plate">
-                        {key}
+                        {item}
                     </div>
                     <div id="amount-of-plates">
                         x
-                        {value}
+                        {totalPlates[item]}
                     </div>
                 </div>
             )}

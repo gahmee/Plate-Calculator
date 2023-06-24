@@ -18,6 +18,7 @@ const Home = () => {
         const plates = [45, 35, 25, 10, 5, 2.5]
 
         let platesToAdd = {}
+
         let i = 0;
         while (weight > 0) {
             if (plates[i] <= weight) {
