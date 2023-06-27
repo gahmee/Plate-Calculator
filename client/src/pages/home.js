@@ -48,24 +48,34 @@ const Home = () => {
 
     return (
         <div id="home">
-            <div>
+            <div id="home-container">
                 <h2>BAR</h2>
-                <div id="bar-weight-container">
-                    <TextField type="number" label="Enter Bar Weight" variant="filled" value={barWeight} onChange={(e) => handleBarWeight(e.target.value)} />
+                <div>
+                    <input
+                        type="number"
+                        label="Enter Bar Weight"
+                        variant="filled"
+                        value={barWeight} onChange={(e) => handleBarWeight(e.target.value)}
+                    />
                 </div>
                 <div>
-                    <Button variant="outlined" onClick={() => handleBarWeight(0)}>0 lbs</Button>
-                    <Button variant="outlined" onClick={() => handleBarWeight(20)}>20 lbs</Button>
-                    <Button variant="outlined" onClick={() => handleBarWeight(35)}>35 lbs</Button>
-                    <Button variant="outlined" onClick={() => handleBarWeight(45)}>45 lbs</Button>
+                    <Button variant="contained" onClick={() => handleBarWeight(0)}>0 lbs</Button>
+                    <Button variant="contained" onClick={() => handleBarWeight(20)}>20 lbs</Button>
+                    <Button variant="contained" onClick={() => handleBarWeight(35)}>35 lbs</Button>
+                    <Button variant="contained" onClick={() => handleBarWeight(45)}>45 lbs</Button>
                 </div>
 
             </div>
-            <div id="weight-container">
+            <div id="home-container">
                 <h2>WEIGHT</h2>
-                <TextField type="number" onChange={(e) => calculateWeight(e.target.value, barWeight)} />
+                <div>
+                    <input
+                        type="number"
+                        onChange={(e) => calculateWeight(e.target.value, barWeight)}
+                    />
+                </div>
             </div>
-            <div id="plate-display-container">
+            <div id="home-container">
                 <h2>PLATES (PER SIDE)</h2>
                 <DisplayPlates totalPlates={totalPlates} errorMessage={errorMessage} />
             </div>

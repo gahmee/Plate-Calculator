@@ -35,8 +35,8 @@ code {
   align-items: center;
   background-color: #e7e7e7;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   font-size: 30px;
   font-weight: bold;
   padding: 10px;
@@ -55,6 +55,21 @@ code {
   font-size: 30px;
 }
 
-#bar-weight-container {
-  padding: 20px;
+#home-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(223, 223, 223);
+  width: 90%;
+  padding: 0px 20px 20px;
+  gap: 20px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+
+input {
+  padding: 10px;
+  font-size: 30px;
+  width: 120px;
+  text-align: center;
 }
