@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import DisplayPlates from '../components/DisplayPlates'
+import { TextField, Button } from '@mui/material'
+
 
 
 const Home = () => {
@@ -47,23 +49,23 @@ const Home = () => {
     return (
         <div id="home">
             <div>
-                <h2>BAR WEIGHT</h2>
-                <div>
-                    <input type="number" value={barWeight} onChange={(e) => handleBarWeight(e.target.value)}></input>
+                <h2>BAR</h2>
+                <div id="bar-weight-container">
+                    <TextField type="number" label="Enter Bar Weight" variant="filled" value={barWeight} onChange={(e) => handleBarWeight(e.target.value)} />
                 </div>
                 <div>
-                    <button onClick={() => handleBarWeight(0)}>0</button>
-                    <button onClick={() => handleBarWeight(20)}>20</button>
-                    <button onClick={() => handleBarWeight(35)}>35</button>
-                    <button onClick={() => handleBarWeight(45)}>45</button>
+                    <Button variant="outlined" onClick={() => handleBarWeight(0)}>0 lbs</Button>
+                    <Button variant="outlined" onClick={() => handleBarWeight(20)}>20 lbs</Button>
+                    <Button variant="outlined" onClick={() => handleBarWeight(35)}>35 lbs</Button>
+                    <Button variant="outlined" onClick={() => handleBarWeight(45)}>45 lbs</Button>
                 </div>
 
             </div>
-            <div>
+            <div id="weight-container">
                 <h2>WEIGHT</h2>
-                <input type="number" onChange={(e) => calculateWeight(e.target.value, barWeight)}></input>
+                <TextField type="number" onChange={(e) => calculateWeight(e.target.value, barWeight)} />
             </div>
-            <div>
+            <div id="plate-display-container">
                 <h2>PLATES (PER SIDE)</h2>
                 <DisplayPlates totalPlates={totalPlates} errorMessage={errorMessage} />
             </div>
