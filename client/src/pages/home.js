@@ -49,7 +49,9 @@ const Home = () => {
     return (
         <div id="home">
             <div id="home-container">
-                <h2>BAR</h2>
+                <div className='container-title'>
+                    <h3>BAR</h3>
+                </div>
                 <div>
                     <input
                         type="number"
@@ -58,16 +60,18 @@ const Home = () => {
                         value={barWeight} onChange={(e) => handleBarWeight(e.target.value)}
                     />
                 </div>
-                <div>
-                    <Button variant="contained" onClick={() => handleBarWeight(0)}>0 lbs</Button>
-                    <Button variant="contained" onClick={() => handleBarWeight(20)}>20 lbs</Button>
-                    <Button variant="contained" onClick={() => handleBarWeight(35)}>35 lbs</Button>
-                    <Button variant="contained" onClick={() => handleBarWeight(45)}>45 lbs</Button>
+                <div className='bar-buttons-container'>
+                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(0)}>0 lbs</Button>
+                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(20)}>20 lbs</Button>
+                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(35)}>35 lbs</Button>
+                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(45)}>45 lbs</Button>
                 </div>
 
             </div>
             <div id="home-container">
-                <h2>WEIGHT</h2>
+                <div className='container-title'>
+                    <h3>WEIGHT</h3>
+                </div>
                 <div>
                     <input
                         type="number"
@@ -76,7 +80,9 @@ const Home = () => {
                 </div>
             </div>
             <div id="home-container">
-                <h2>PLATES (PER SIDE)</h2>
+                <div className='container-title'>
+                    <h3>PLATES (PER SIDE)</h3>
+                </div>
                 <DisplayPlates totalPlates={totalPlates} errorMessage={errorMessage} />
             </div>
         </div>

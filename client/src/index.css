@@ -8,6 +8,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #000000;
+  color: #fcfdfc;
 }
 
 code {
@@ -35,8 +37,8 @@ code {
   align-items: center;
   background-color: #e7e7e7;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
   font-size: 30px;
   font-weight: bold;
   padding: 10px;
@@ -55,21 +57,43 @@ code {
   font-size: 30px;
 }
 
+.container-title {
+  background-color: #2a2c2b;
+  border-radius: 10px 10px 0px 0px;
+}
+
 #home-container {
   display: flex;
   flex-direction: column;
-  background-color: rgb(223, 223, 223);
-  width: 90%;
-  padding: 0px 20px 20px;
+  background-color: #0c0d0d;
+  width: 90vw;
   gap: 20px;
   border-radius: 10px;
   margin: 5px;
 }
 
+.bar-buttons-container {
+  padding: 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 
 input {
-  padding: 10px;
-  font-size: 30px;
+  margin: 10px;
+  font-size: 40px;
   width: 120px;
   text-align: center;
+  background-color: #0c0d0d;
+  border: none;
+  border-bottom: 5px solid red;
+  color: white;
 }
