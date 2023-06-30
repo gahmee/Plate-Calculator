@@ -48,9 +48,9 @@ const Home = () => {
 
     return (
         <div id="home">
-            <div id="home-container">
+            <div className="home-container">
                 <div className='container-title'>
-                    <h3>BAR</h3>
+                    BAR
                 </div>
                 <div>
                     <input
@@ -61,16 +61,16 @@ const Home = () => {
                     />
                 </div>
                 <div className='bar-buttons-container'>
-                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(0)}>0 lbs</Button>
-                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(20)}>20 lbs</Button>
-                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(35)}>35 lbs</Button>
-                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(45)}>45 lbs</Button>
+                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(0)}>0</Button>
+                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(20)}>20</Button>
+                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(35)}>35</Button>
+                    <Button style={{ backgroundColor: '#2a2c2b' }} variant="contained" onClick={() => handleBarWeight(45)}>45</Button>
                 </div>
 
             </div>
-            <div id="home-container">
+            <div className="home-container">
                 <div className='container-title'>
-                    <h3>WEIGHT</h3>
+                    WEIGHT
                 </div>
                 <div>
                     <input
@@ -79,11 +79,13 @@ const Home = () => {
                     />
                 </div>
             </div>
-            <div id="home-container">
+            <div className="home-container" id="test">
                 <div className='container-title'>
-                    <h3>PLATES (PER SIDE)</h3>
+                    PLATES (PER SIDE)
                 </div>
-                <DisplayPlates totalPlates={totalPlates} errorMessage={errorMessage} />
+                <div id="plate-container">
+                    <DisplayPlates totalPlates={totalPlates} errorMessage={errorMessage} />
+                </div>
             </div>
         </div>
     )
