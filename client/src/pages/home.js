@@ -4,7 +4,7 @@ import { TextField, Button } from '@mui/material'
 
 
 
-const Home = () => {
+const home = () => {
     const [barWeight, SetBarWeight] = useState(45)
     const [totalPlates, setTotalPlates] = useState({})
     const [errorMessage, setErrorMessage] = useState(false)
@@ -91,4 +91,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default home
