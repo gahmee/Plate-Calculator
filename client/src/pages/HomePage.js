@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import DisplayPlates from '../components/DisplayPlates'
-import { TextField, Button } from '@mui/material'
+import { Button } from '@mui/material'
 
 
 
@@ -55,6 +55,7 @@ const HomePage = () => {
                 <div>
                     <input
                         type="number"
+                        pattern="/d"
                         label="Enter Bar Weight"
                         variant="filled"
                         value={barWeight} onChange={(e) => handleBarWeight(e.target.value)}
@@ -75,6 +76,7 @@ const HomePage = () => {
                 <div>
                     <input
                         type="number"
+                        pattern="/d"
                         onChange={(e) => calculateWeight(e.target.value, barWeight)}
                     />
                 </div>
